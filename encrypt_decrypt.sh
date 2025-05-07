@@ -22,5 +22,5 @@ then
     openssl enc -aes256 -pbkdf2 -in $2 -out "$2.enc" -pass pass:$CAT_PASSWORD
 elif [ "$1" == "dec" ]
 then
-    openssl enc -aes256 -pbkdf2 -d -in $2 -out "${$2::-4}" -pass pass:$CAT_PASSWORD
+    openssl enc -aes256 -pbkdf2 -d -in $2 -out "${2::-4}" -pass pass:$CAT_PASSWORD
 fi
